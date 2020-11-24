@@ -129,3 +129,14 @@ where sal between 2000 and 3000;
 select *
  from emp
 where sal not between 2000 and 3000;
+
+select *
+ from emp
+ where ename like '%AM%';
+ 
+ select *
+ from emp
+ where ename not like '%AM%';
+ 
+ select ename, sal, sal*12+comm as annsal, comm
+  from emp;
