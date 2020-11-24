@@ -16,7 +16,7 @@ select ename, upper(ename), lower(ename), initcap(ename)
   from emp
  where length(ename) >= 5;
  
- select length('�ѱ�'), lengthb('�ѱ�')
+ select length('ÇÑ±Û'), lengthb('ÇÑ±Û')
   from dual;
   
  select *
@@ -28,6 +28,7 @@ select job, substr(job, 1, 2), substr(job, 3, 2), substr(job, 5)
  
 select substr(ename, 3)
  from emp;
+ 
  
  select job,
  substr(job, -length(job)),
