@@ -162,3 +162,108 @@ select *
  from emp
 where sal > null
  or comm is null;
+ 
+select empno, ename, sal, deptno
+ from emp
+ where deptno = 10
+union
+select empno, ename, sal, deptno
+ from emp
+where deptno = 20;
+
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10
+union
+select sal, job, deptno, sal
+ from emp
+where deptno = 20;
+
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10
+union
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10;
+
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10
+union all
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10;
+
+select empno, ename, sal, deptno
+ from emp
+minus
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10;
+
+select empno, ename, sal, deptno
+ from emp
+intersect
+select empno, ename, sal, deptno
+ from emp
+where deptno = 10;
+
+select*from emp;
+
+select *
+ from emp
+ where ename like '%S';
+ 
+ select empno, ename, job, sal, deptno
+  from emp
+ where deptno = 30
+  and job = 'SALESMAN';
+ 
+
+select empno, ename, job, sal, deptno
+ from emp
+where deptno in (20, 30)
+ and sal > 2000;
+
+
+ select empno, ename, job, sal, deptno
+  from emp
+ where deptno = 20
+  and sal > 2000
+ union
+ select empno, ename, job, sal, deptno
+  from emp
+where deptno = 30
+ and sal > 2000;
+ 
+ 
+ select empno, ename, job, sal, deptno
+  from emp
+ where deptno = 20
+  and sal not between 0 and 2000
+ union
+ select empno, ename, job, sal, deptno
+  from emp
+where deptno = 30
+  and sal not between 0 and 2000;
+  
+  
+ select *
+  from emp
+ where sal < 2000
+  or sal > 3000;
+  
+ select ename, empno, sal, deptno
+  from emp
+ where deptno = 30
+  and ename like '%E%'
+  and sal not between 1000 and 2000;
+  
+ select*from emp;
+ 
+ select * from emp
+ where comm is null
+  and mgr is not null
+  and job in ('MANAGER', 'CLERK')
+  and ename not like '_L%';
