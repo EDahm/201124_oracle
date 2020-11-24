@@ -140,3 +140,25 @@ select *
  
  select ename, sal, sal*12+comm as annsal, comm
   from emp;
+  
+select *
+ from emp
+ where comm = null;
+
+select *
+ from emp
+where comm is null;
+
+select *
+ from emp
+where mgr is not null;
+
+select *
+ from emp
+where sal > null
+ and comm is null;
+
+select *
+ from emp
+where sal > null
+ or comm is null;
